@@ -1,5 +1,6 @@
 <?php
 include_once './conexao.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,10 +17,13 @@ include_once './conexao.php';
 </head>
 
 <body>
+    <?php
+        include_once './menu.php';
+    ?>
     <div class="container">
         <h2 class="display-4 mt-5 mb-5">Produtos</h2>
         <?php   
-
+            
             $query_products = "SELECT id, name, price, image FROM products ORDER BY id ASC";
             $result_products = $conn->prepare($query_products);
             $result_products->execute();
